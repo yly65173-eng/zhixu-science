@@ -31,6 +31,23 @@ export const vocabulary = [
  ['uncertainty','不确定度',['measurement uncertainty','error analysis'],['不确定度','误差分析']],
  ['thermal','热力学',['thermodynamics','thermodynamic'],['热力学']]
 ].map(([id,zh,en,aliases])=>({id,zh,en,aliases}));
+vocabulary.push(...[
+ ['nernst','膜电位',['membrane potential','Nernst equation'],['膜电位','能斯特','Nernst']],
+ ['osmosis','渗透作用',['osmosis','osmotic pressure'],['渗透压','渗透作用','半透膜']],
+ ['potential','化学势',['chemical potential','electrochemical potential'],['化学势','电化学势']],
+ ['binding','配体结合',['ligand binding','dissociation constant'],['配体结合','受体结合','解离常数']],
+ ['logistic','种群增长',['population growth','logistic growth'],['种群','Logistic','逻辑斯蒂']],
+ ['fourier','傅里叶分析',['Fourier transform','spectral analysis'],['傅里叶','频谱']],
+ ['poisson','泊松统计',['Poisson distribution','photon counting'],['泊松','光子计数']],
+ ['rc','RC 电路',['RC circuit','membrane capacitance'],['RC电路','RC 电路','膜电容']],
+ ['electrophoresis','电泳',['electrophoresis','electrophoretic mobility'],['电泳','迁移率']],
+ ['surface','表面张力',['surface tension','capillary pressure'],['表面张力','毛细']],
+ ['dna','DNA 复制',['DNA replication','semiconservative replication'],['DNA','半保留复制']],
+ ['translation','蛋白质合成',['protein synthesis','translation'],['转录','翻译','蛋白质合成']],
+ ['stoichiometry','反应计量',['stoichiometry','mass balance'],['计量','质量守恒','代谢网络']],
+ ['buffer','酸碱缓冲',['buffer capacity','acid-base equilibrium'],['缓冲','pKa']],
+ ['oscillation','振动',['oscillation','molecular vibration'],['振动','振荡','共振']]
+].map(([id,zh,en,aliases])=>({id,zh,en,aliases})));
 
 export const bridges = [
  {id:'potential',title:'势：变化为什么会朝一个方向发生？',fields:['物理','化学','生物','数学'],terms:'电势 · 化学势 · 电化学势 · 势函数',formula:'μ = μ° + RT ln a； μ̃ = μ + zFφ',meaning:'共同点是用一个标量刻画驱动力。电势 φ 是单位电荷的势能，化学势 μ 是吉布斯自由能对组分物质的量的偏导。离子跨膜时，两种贡献需要一起计算。',example:'离子可能逆浓度梯度跨膜：浓度项不利，但电势项有利；应比较总电化学势。',boundary:'电势单位是 V，化学势是 J/mol，二者不能直接相加，须乘 zF。化学势并不等于浓度。',source:'https://goldbook.iupac.org/terms/view/C01032'},

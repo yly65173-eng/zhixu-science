@@ -25,3 +25,14 @@ Date: 2026-11-03 (Asia/Shanghai). This records one development session, not a gu
 - Office/PDF tests cover synthetic textual fixtures and do not establish perfect parsing of arbitrary class materials. Complex equations, columns, images, tables, notes and scanned documents require review or OCR.
 - Relevance is deterministic concept overlap, not a trained semantic ranker or factual verification model.
 - Browser checks are manual interaction checks in one environment. No claim of exhaustive cross-browser, accessibility or adversarial-file testing.
+
+
+## v0.2 functional update · 2026-11-03
+
+- 49 automated tests pass, including the original 23 plus numerical parsing, Student t intervals, a hand-computed noisy OLS example, inverse calibration/dilution/extrapolation, stoichiometric titration, zero/first/second order kinetic examples, Welch p/df, zero-variance handling, unsafe URL rejection, CSV formula protection, knowledge search/subject intersections, single-character scientific queries, report matching and unknown-template behavior.
+- All 18 model definitions have finite coordinates and valid bond indices. All 10 process renderers return finite SVG at 0/50/100% progress. Biological diagrams are explicitly coarse-grained or schematic.
+- Browser checked: EDTA name-based report generation returned the EDTA principle and an unfilled experimental results table. Editable text and report origin were visible.
+- Browser checked: six-point calibration sample returned slope 0.1003429, intercept 0.01180952, R² 0.999936 and unknown mean about 2.526576 mg/L, with residual plot and dilution metadata.
+- Browser checked: natural Chinese membrane-potential/equilibrium query ranked Nernst first. DNA search selected the coarse model, and half-conservative replication animation advanced with no captured browser errors.
+- Optional AI uses a mock transport test only; no user's real key, paid model or third-party AI endpoint was used in validation. Live service compatibility, model accuracy, provider pricing and CORS require the user's selected service.
+- No claim of universal experimental report coverage, precise molecular simulation or complete measurement uncertainty budgets.

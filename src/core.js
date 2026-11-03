@@ -49,6 +49,7 @@ export function deduplicate(docs){
   const old=out.find(x=>(doi&&canonicalDOI(x.doi)===doi)|| (doc.source!=='本地导入'&&x.source!=='本地导入'&&title&&title===(x.title||'').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'')&&(!doi||!x.doi)) || (doc.id&&doc.id===x.id));
   if(!old){out.push({...doc,doi,sections:[...(doc.sections||[])],sources:doc.sources||[doc.source]});continue;}
   old.sources=[...new Set([...old.sources,doc.source])]; old.doi=old.doi||doi;old.pmcid=old.pmcid||doc.pmcid;
+  old.fullTextLinks=[...new Map([...(old.fullTextLinks||[]),...(doc.fullTextLinks||[])].map(l=>[l.url,l])).values()];
   for(const s of doc.sections||[])if(!old.sections.some(a=>a.text===s.text))old.sections.push(s);
  }
  return out;

@@ -6,6 +6,7 @@ The original Zhixu Science application is MIT licensed. Runtime/build dependenci
 | --- | --- | --- | --- |
 | pdfjs-dist | 5.4.394 | Apache-2.0 | https://github.com/mozilla/pdf.js |
 | fflate | 0.8.3 | MIT | https://github.com/101arrowz/fflate |
+| jStat | 1.9.6 | MIT | https://github.com/jstat/jstat |
 | Vite | 8.3.5 | MIT and dependency notices | https://github.com/vitejs/vite |
 
 Exact transitive versions and integrity hashes are recorded in `package-lock.json`. Complete license texts for redistributed runtime code and build tooling are copied from installed packages into `public/licenses/`, and included in the static build. Vite's bundled dependency license notice is included with its license. Do not remove upstream license banners from compiled assets.

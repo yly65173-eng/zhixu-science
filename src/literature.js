@@ -20,7 +20,7 @@ export async function searchLiterature(concepts,{onProgress=()=>{},signal}={}){
  const jobs=ready.flatMap(c=>[
   async()=>{
    const data=await request(EPMC+'search?'+new URLSearchParams({query:booleanQuery([c]),format:'json',resultType:'core',pageSize:'5'}),'json',signal);
-   for(const r of data.resultList?.result||[])docs.push({id:'epmc-'+r.source+'-'+r.id,title:plain(r.title||'无标题'),source:'Europe PMC',doi:r.doi,pmcid:r.pmcid,year:r.pubYear,authors:r.authorString,url:r.doi?'https://doi.org/'+r.doi:'https://europepmc.org/article/'+r.source+'/'+r.id,retracted:r.isRetracted==='Y',sections:[{label:'摘要',kind:'abstract',text:plain(r.abstractText||'')},{label:'标题',kind:'metadata',text:plain(r.title||'')}].filter(s=>s.text)});
+   for(const r of data.resultList?.result||[])docs.push({id:'epmc-'+r.source+'-'+r.id,title:plain(r.title||'无标题'),source:'Europe PMC',doi:r.doi,pmcid:r.pmcid,fullTextLinks:r.fullTextUrlList?.fullTextUrl||[],year:r.pubYear,authors:r.authorString,url:r.doi?'https://doi.org/'+r.doi:'https://europepmc.org/article/'+r.source+'/'+r.id,retracted:r.isRetracted==='Y',sections:[{label:'摘要',kind:'abstract',text:plain(r.abstractText||'')},{label:'标题',kind:'metadata',text:plain(r.title||'')}].filter(s=>s.text)});
   },
   async()=>{
    const data=await request('https://api.crossref.org/works?'+new URLSearchParams({'query.bibliographic':c.en[0],rows:'5',select:'DOI,title,author,published,abstract,URL'}),'json',signal);
